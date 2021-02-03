@@ -1,182 +1,68 @@
-# A CRUD API and Front end for a online store (with MERN Stack)
-This project can be used as a boiler plate for building a MongoDB-Express-React-Node stack application.
-Base URL: https://frozen-lake-54898.herokuapp.com/
-Hit all the Routes with this Url as its base to access the API
-## Features:
-  - CRUD operations for items, subject to user authorization
-  - User registration and verification by email
-  - User authentication with Facebook, Oauth
-  - Uploading an image of the item
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting Started
-### Prerequisites
+## Available Scripts
 
- - NodeJS, NPM (https://www.npmjs.com/get-npm)
- - A MongoDB server, local or remote. Example: mLab (https://mlab.com/)
- - A cloudinary account (https://cloudinary.com/)
- - A Heroku free tier plan - optional
+In the project directory, you can run:
 
-### Installing
+### `npm start`
 
-  - Clone the repo and check out the code
-  - Run 
-    ```
-    $ npm install 
-    $ cd client && npm install
-    ```
-  - Set following environment variables in a .env file in the root directory
-    ``` 
-    #jwt secret
-    JWT_SECRET = <some string> ex: 'myJWTSecret'
-    
-    #fb app credentials, needs to be created at https://developers.facebook.com/apps
-    CLIENT_ID = <Facebook app client ID for your app> 
-    CLIENT_SECRET = <Facebook app client secret for your app>
-    
-    #email credentials
-    MAIL_USER = <e-mail address, from which you will be sending the account verification emails to new users> ex:"support@yourstoreapp.com"
-    MAIL_PASSWORD = <e-mail password for the above account> 
-    
-    #cloudinary credentials, needs to be created at https://cloudinary.com/
-    CLOUDINARY_API_SECRET = <cloudinary API secret for your app>
-    CLOUDINARY_API_KEY =  <cloudinary API key for your app>
-    CLOUDINARY_CLOUD_NAME = <cloudinary cloud name>
-    
-    #Database server connection URI. If you are using mLab, this needs to be created at https://mlab.com/, and would look like the following:
-    MONGODB_URI = 'mongodb://<user_name>:<password>@xxxxx.mlab.com:xxxxx/<db_name>'
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-  - Run ``$ npm run dev`` to start both front end and back end on ports 5000 and 3000 respectively
-  - Run ``$ npm run start`` to start the back end express server on port 5000
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-## Available Routes
+### `npm test`
 
-### User Authentication
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Login with Facebook
+### `npm run build`
 
-```
-Method: post
-Type: public
-Route:
-/api/auth/facebook/login
-```
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Register new user with email
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-```
-Method: post
-Type: public
-Route:
-/api/auth/register
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Login user with email
+### `npm run eject`
 
-```
-Method: post
-Type: public
-Route:
-/api/auth/login
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- Verify email address
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
-Method: get
-Type: public
-Route:
-/api/auth/verify/<your token>
-```
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- Get profile information
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```
-Method: get
-Type: private
-Route:
-/api/auth/me
-```
+## Learn More
 
-### User Information
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Get all users
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```
-Method: get
-Type: public
-Route:
-/api/users/
-```
+### Code Splitting
 
-- Get a specific user with user ID
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-```
-Method: get
-Type: public
-Route:
-/api/users/<user ID>
-```
+### Analyzing the Bundle Size
 
-### Items
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-- Create new item
+### Making a Progressive Web App
 
-```
-Method: post
-Type: private
-Route:
-/api/items/
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-- Get single item with item ID
+### Advanced Configuration
 
-```
-Method: get
-Type: public
-Route:
-/api/items/<item ID>
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-- Get all available items
+### Deployment
 
-```
-Method: get
-Type: public
-Route:
-/api/items/
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-- Delete an item with item ID
+### `npm run build` fails to minify
 
-```
-Method: delete
-Type: private
-Route:
-/api/items/<item ID>
-```
-
-- Update an item with item ID
-
-```
-Method: put
-Type: private
-Route:
-/api/items/<item ID>
-```
-
-## Running the tests
-
-Currently No tests are available.
-
-## Deployment
-To deploy on Heroku, create an account and set up environment variables. Then run ``$ git push heroku master``
-[Preview](https://frozen-lake-54898.herokuapp.com/)
-
-## Contributing
-
-Please create an issue and start working a feature/ bug you prefer :rocket:.
-
-## License
-
-This project is licensed under ISC.
-
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
