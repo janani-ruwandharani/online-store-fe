@@ -25,7 +25,7 @@ class ItemDisplayComp extends React.Component {
   render() {
     const items = this.state.items;
     //console.log(items);
-    return (
+    if(Array.isArray(items) && items.length>0){return (
       <div>
         <main role="main">
           <div className="album py-5 bg-light">
@@ -76,7 +76,10 @@ class ItemDisplayComp extends React.Component {
           </div>
         </main>
       </div>
-    );
+    )}
+    else{
+      return(<div></div>)
+    }
   }
 }
 export default ItemDisplayComp;
