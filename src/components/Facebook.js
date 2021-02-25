@@ -50,7 +50,7 @@ class Facebook extends Component {
     let fbContent;
     fbContent = (
       <FacebookLogin
-        appId="129047940440558"
+        appId="229456635479640"
         autoLoad={false}
         fields="name,email,picture"
         onClick={this.componentClicked}
