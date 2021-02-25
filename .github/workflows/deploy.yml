@@ -13,11 +13,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Run Tests
-        env:
-          CI: true
+        #env:
+          #CI: true
         run: npm test
       - name: Build
-        run: npm run build
+        run: CI='' npm run build
+             
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v2
         with:
