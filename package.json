@@ -2,8 +2,7 @@
   "name": "shop-app",
   "version": "0.1.0",
   "private": true,
-  "proxy" : "https://git.heroku.com/frozen-lake-54898.git",
-
+  
   "dependencies": {
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
@@ -20,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
+  "proxy" : "https://git.heroku.com/fork-online-store.git"
   "eslintConfig": {
     "extends": "react-app"
   },
