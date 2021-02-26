@@ -13,7 +13,7 @@ class ItemDisplayComp extends React.Component {
   componentDidMount() {
     var self = this;
     axios
-      .get("api/items")
+      .get("https://frozen-lake-54898.herokuapp.com/api/items")
       .then(function(response) {
         self.setState({ items: response.data });
       })
