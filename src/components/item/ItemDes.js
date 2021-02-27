@@ -43,7 +43,7 @@ class ItemDes extends Component {
   onDeleteClick(e) {
     e.preventDefault();
     axios
-      .delete("/api/items/" + this.state._id, {
+      .delete(`${process.env.REACT_APP_BACK_END_SERVICE}/api/items/` + this.state._id, {
         headers: {
           "x-access-token": JSON.parse(sessionStorage.getItem("user")).jwtToken
         }

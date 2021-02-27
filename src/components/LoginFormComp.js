@@ -17,7 +17,7 @@ class LoginFormComp extends Component {
   onSubmit(e) {
     e.preventDefault();
     axios
-      .post("/api/auth/login", this.state)
+      .post(`${process.env.REACT_APP_BACK_END_SERVICE}/api/auth/login`, this.state)
       .then(res => {
         console.log(res);
         sessionStorage.setItem(

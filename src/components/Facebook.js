@@ -13,7 +13,7 @@ class Facebook extends Component {
   };
   onLoginSuccess() {
     axios
-      .post("/api/auth/facebook/login", {
+      .post(`${process.env.REACT_APP_BACK_END_SERVICE}/api/auth/facebook/login`, {
         access_token: this.state.accessToken,
       })
       .then((res) => {

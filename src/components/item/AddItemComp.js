@@ -30,7 +30,7 @@ class AddItemComp extends Component {
     formData.append("file", file);
     console.log(this.state);
     axios
-      .post("/api/items", formData, {
+      .post(`${process.env.REACT_APP_BACK_END_SERVICE}/api/items`, formData, {
         headers: {
           "x-access-token": JSON.parse(sessionStorage.getItem("user")).jwtToken
           //"Content-Type": "application/x-www-form-urlencoded"

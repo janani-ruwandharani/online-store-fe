@@ -25,7 +25,7 @@ class RegisterFormComp extends Component {
       password: this.state.password
     };
     axios
-      .post("/api/auth/register", newUser)
+      .post(`${process.env.REACT_APP_BACK_END_SERVICE}/api/auth/register`, newUser)
       .then(res => {
         console.log(res);
 

@@ -20,7 +20,7 @@ class LoginFormComp extends Component {
     //console.log(this.state);
 
     axios
-      .put("/api/items/" + this.props.itemId, this.state, {
+      .put(`${process.env.REACT_APP_BACK_END_SERVICE}/api/items/` + this.props.itemId, this.state, {
         headers: {
           "x-access-token": JSON.parse(sessionStorage.getItem("user")).jwtToken
         }
@@ -44,7 +44,7 @@ class LoginFormComp extends Component {
   componentDidMount() {
     var self = this;
     axios
-      .get("api/items/" + this.props.itemId)
+      .get(`${process.env.REACT_APP_BACK_END_SERVICE}api/items/` + this.props.itemId)
       .then(function(res) {
         self.setState(res.data);
         console.log(self.state);
