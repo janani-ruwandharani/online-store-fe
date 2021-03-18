@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Cart from "./item/AddToCart";
 import { Link } from "react-router-dom";
+import { render } from "react-dom";
 
 
 class ItemDisplayComp extends React.Component {
