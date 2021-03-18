@@ -1,14 +1,8 @@
 import React from "react";
 import axios from "axios";
-import {useState} from "react";
+import Cart from "./item/AddToCart";
 import { Link } from "react-router-dom";
 
-const [cart, setCart]=useState([]);
-
-const addToCart = (items)=>{
-  console.log('we are in add to cart')
-  setCart([...cart,items])
-}
 
 class ItemDisplayComp extends React.Component {
   constructor(props) {
@@ -70,7 +64,7 @@ class ItemDisplayComp extends React.Component {
                             <a 
                               type="button"
                               className="btn btn-sm btn-outline-secondary"
-                              onClick = {()=>addToCart(items)}
+                              onClick = {()=>Cart.addToCart(items)}
                             >
                               Add to Cart
                             </a>
@@ -91,7 +85,6 @@ class ItemDisplayComp extends React.Component {
             </div>
           </div>
         </main>
-        <addToCart/>
       </div>
     )}
     else{
