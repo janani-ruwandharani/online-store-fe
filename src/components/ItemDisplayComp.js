@@ -58,7 +58,7 @@ class ItemDisplayComp extends React.Component {
                             >
                               View
                             </a>
-                            <a href={"/#/viewItem/"+item._id}
+                            <a 
                               type="button"
                               className="btn btn-sm btn-outline-secondary"
                             >
