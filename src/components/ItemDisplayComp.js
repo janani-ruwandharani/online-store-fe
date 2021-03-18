@@ -66,6 +66,14 @@ class ItemDisplayComp extends React.Component {
                             </a>*/}
                           </div>
                           {/*<small className="text-muted">9 mins</small>*/}
+                          <div className="btn-group">
+                            <a href={"/#/viewItem/"+item._id}
+                              type="button"
+                              className="btn btn-sm btn-outline-secondary"
+                            >
+                              Add to Cart
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
