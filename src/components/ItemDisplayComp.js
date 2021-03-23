@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Cart from "./item/AddToCart";
 import { Link } from "react-router-dom";
 import { render } from "react-dom";
 
@@ -9,7 +8,10 @@ class ItemDisplayComp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
+      cart : [],
+      count: [],
+      total:0,
     };
   }
   
@@ -28,9 +30,23 @@ class ItemDisplayComp extends React.Component {
 
   render() {
     const items = this.state.items;
+    const cart = this.state.cart;
+    const count = this.state.count;
+    const total = this.state.total;
     //console.log(items);
+
+
+    const addToCart = (item, price)=>{
+      this.setState({cart:cart.concat(item)})
+      this.setState({total:total + price})
+      this.setState({count:count + 1})
+    };
+
     if(Array.isArray(items) && items.length>0){return (
       <div>
+         <header>
+          <button>Cart({count.length}) Total({total})</button>
+        </header>
         <main role="main">
           <div className="album py-5 bg-light">
             <div className="container">
@@ -65,7 +81,8 @@ class ItemDisplayComp extends React.Component {
                             <a 
                               type="button"
                               className="btn btn-sm btn-outline-secondary"
-                              onClick = {()=>Cart.addToCart(items)}
+                              
+                              onClick = {()=>addToCart(item.name, item.price)}
                             >
                               Add to Cart
                             </a>
